@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Programação em Python
 Professor Daniel Santos<br>
 Turma: PYTHON 2402SG
@@ -25,6 +25,6 @@ O curso de Aperfeiçoamento Profissional de Programação em Python tem por obje
 - Estruturas de repetição
 - Estrutura de dados no Python
 - Módulos e pacotes
-=======
+
 # SenaiPython2024
 SenaiPython2024
