@@ -1,3 +1,47 @@
+#  ctrl + / = comenta.
+
+# 1) Quais destes são operadores e quais são valores:
+# *	operadores
+# ‘ola’	valores
+# -15.3	valores
+# -	operadores
+# /	operadores
+# +	operadores
+# 22	valores
+
+# 2) Quais destes nomes podem ser utilizados para criação de variáveis:
+# ‘teste’	x
+# Teste	v
+# _teste	v
+# 42_teste	x
+# joaoCardoso	v
+# 1Caixa	x
+# ‘nomeCompleto’	x
+# botao4LigaLampada	v
+
+# 3) Indique qual o tipo de cada variável abaixo:
+# “a”	str
+# 12	int
+# Senai	Não válido
+# 1.5	float
+# True	Bolean
+# ‘55’	str
+# ‘False’	str
+# “Verdadeiro ou Falso?”	str
+
+# 4)	Qual o resultado do código a seguir:
+# alunos = 15
+# alunos = alunos + 1
+# print(alunos)
+# 16
+
+# 5)	Qual o resultado do código a seguir:
+# alunos = ‘15’
+# alunos = alunos + ‘1’
+# print(alunos)
+# 151
+
+
 class vendedor:
     def __init__(self):
         vendedor = 'Minoru'
