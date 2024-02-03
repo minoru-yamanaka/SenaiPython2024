@@ -92,9 +92,7 @@ class exibirAniversario:
         nascimento = input()
         idade = int(nascimento) - 2024
         idade = idade * -1
-        print('Você terá: ' + str(idade))
-
-
+        print('Você tem: ' + str(idade) + ' anos')
 # call_exibir_aniversario = exibirAniversario()
 
 # 9) Um professor gostaria um programa para auxiliá-lo a montar a média final de seus alunos. Sabendo que são 2 notas por semestre, monte um programa que através das notas informadas pelo usuário mostre a sua média final. Não esqueça de manter uma boa interface com o usuário!!
@@ -107,9 +105,7 @@ class mediaFinal:
         n2 = input()
         r = int(n1) + int(n2)
         mediaFinal = r // 2
-        print
-
-
+        print('A média final é: ' + str(mediaFinal) )
 # call_mediaFinal = mediaFinal()
 
 # 10) Faça um programa para converter Reais em Dólares informado pelo usuário:
@@ -121,10 +117,8 @@ class conveterMoedas:
         reais = float(input())
         print('Insira a valor do Dólar: ')
         dolares = float(input())
-        convercao = reais * dolares
+        convercao = reais / dolares
         print('O valor de R$ ' + str(reais) + ' reais' + ' = USD ' + str(convercao) + ' dólares')
-
-
 # call_conveterMoedas = conveterMoedas()
 
 # 11) Faça um programa para converter Graus Celsius em Fahrenheit informado pelo usuário:
