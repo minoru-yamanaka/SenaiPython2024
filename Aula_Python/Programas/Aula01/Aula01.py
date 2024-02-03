@@ -1,3 +1,5 @@
+import datetime
+
 #  ctrl + / = comenta.
 
 # 1) Quais destes são operadores e quais são valores:
@@ -52,8 +54,6 @@ class vendedor:
             print(str(vendedor) + " Bateu a meta")
         else:
             print(str(vendedor) + " Não bateu a meta")
-
-
 # call_vendedor = vendedor()
 
 # 6) Monte um programa que exiba a soma de dois números inteiros.
@@ -64,8 +64,6 @@ class soma:
         n2 = 4
         resultado = n1 + n2
         print('A soma dos números é: ' + str(resultado))
-
-
 # call_soma = soma()
 
 # 7) Monte um programa que exiba a soma de dois números inteiros informados pelo usuário.
@@ -80,8 +78,6 @@ class somaInput:
         n2 = input()
         r = int(n1) + int(n2)
         print(r)
-
-
 # call_somaInput = somaInput()
 
 # 8) Faça um programa que mostre em que ano a pessoa terá 80 anos a partir da idade informada pelo usuário. Não esqueça de manter uma boa interface com o usuário!
@@ -98,14 +94,14 @@ class exibirAniversario:
 # 9) Um professor gostaria um programa para auxiliá-lo a montar a média final de seus alunos. Sabendo que são 2 notas por semestre, monte um programa que através das notas informadas pelo usuário mostre a sua média final. Não esqueça de manter uma boa interface com o usuário!!
 class mediaFinal:
     def __init__(self):
-        print('Insira a 1° nota do semestre: ')
-        n1 = input()
-        int(n1)
-        print('Insira a 2° nota do semestre: ')
-        n2 = input()
-        r = int(n1) + int(n2)
-        mediaFinal = r // 2
-        print('A média final é: ' + str(mediaFinal) )
+            print('Insira a 1° nota do semestre: ')
+            n1 = input()
+            int(n1)
+            print('Insira a 2° nota do semestre: ')
+            n2 = input()
+            r = int(n1) + int(n2)
+            mediaFinal = r // 2
+            print('A média final é: ' + str(mediaFinal) )
 # call_mediaFinal = mediaFinal()
 
 # 10) Faça um programa para converter Reais em Dólares informado pelo usuário:
@@ -143,15 +139,17 @@ class IMC:
         nome = input()
         print('Idade: ')
         idade = int(input())
-        anoNascimento = idade - 2024
+
+        data = datetime.datetime.now().year
+
+        anoNascimento = idade - int(data)
         anoNascimento = anoNascimento * -1
         print('Peso:')
         peso = float(input())
         print('Altura: ')
         altura = float(input())
         imc = peso / (altura ** 2)
-        print('Seu nome é ' + nome + ' e tem ' + str(len(nome)) + ' caracteres, você tem ' + str(
-            idade) + ' anos e nasceu no ano de ' + str(anoNascimento) + 'Você mede ' + str(altura) + ' cm, pesa ' + str(peso) + ' Kg e seu IMC é ' + str(imc) + '.' )
+        print('Seu nome é ' + nome + '\n e tem ' + str(len(nome)) + ' caracteres, \n você tem ' + str(idade) + ' anos e nasceu no ano de ' + str(anoNascimento) + '\n Você mede ' + str(altura) + ' cm, pesa ' + str(peso) + ' Kg e \n seu IMC é ' + f"{imc:.2f}" + '.' )
 # call_IMC = IMC()
 
 # 13) Um fabricante de tintas quer montar um programa que auxilie o comprador a saber quantas latas de tinta ele precisará para pintar sua parede.
@@ -174,3 +172,20 @@ class tintas:
         # Exibindo o resultado
         print('Para pintar uma parede de ' + str(largura) + ' m x ' + str(largura) + ' m, você precisará de ' +  str(latasNecessarias) + ' latas de tinta.')
 # call_tintas = tintas()
+
+class tintas2:
+    def __init__(self):
+        print("Bem-vindo ao Calculador de Latas de Tinta!")
+        largura = float(input("Informe a largura da parede em metros: "))
+        altura = float(input("Informe a altura da parede em metros: "))
+
+        # Calcula a área da parede
+        areaParede = largura * altura
+
+        latas_inteiro = areaParede // 3
+        latas_resto = areaParede% 3 > 0
+        latas_total = latas_inteiro + latas_resto
+
+        # Exibindo o resultado
+        print('Para pintar uma parede de ' + str(largura) + ' m x ' + str(largura) + ' m, você precisará de ' +  str(latas_total) + ' latas de tinta.')
+# call_tintas2 = tintas2()
