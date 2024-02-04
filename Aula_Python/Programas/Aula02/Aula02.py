@@ -180,27 +180,23 @@ class Salario:
 
 class AnoBissexto:
     def __init__(self):
-        ano = float(input('Insira o ano: '))
-        float(ano)
+        # Solicita ao usuário que informe um ano e converte a entrada para inteiro
+        ano_informado = int(input("Informe o ano: "))
 
-            # ano % 100
-            # ano % 4
+        # Verifica se o ano é bissexto e imprime a mensagem correspondente
+        if ano_informado % 4 == 0 and (ano_informado % 100 != 0 or ano_informado % 400 == 0):
 
-        elif ano:
-            restoDiv = ano % 100
-            print(restoDiv)
-        elif ano:
-            restoDiv = ano % 400
-            print(restoDiv)
-        elif ano:
-            restoDiv = ano % 4
-            print(restoDiv)
+        # - ano_informado % 4 == 0: Isso verifica se o ano é divisível  por 4, pois os anos bissextos
+        # geralmente têm essa  propriedade.
+        # - ano_informado % 100 != 0: Este é um segundo critério para garantir que o ano não seja divisível
+        # por 100, a menos que:
+        # - ano_informado % 400 == 0: Se  o  ano for divisível por 100,
+        # ele ainda pode ser bissexto se for divisível por 400.
 
-
-
-
-
-call_AnoBissexto = AnoBissexto()
+            print(f"O ano {ano_informado} é bissexto.")
+        else:
+            print(f"O ano {ano_informado} não é bissexto.")
+# call_AnoBissexto = AnoBissexto()
 
 # 7)Faça um programa que pergunte uma data ao usuário (dia, mês e ano separadamente) e valide se aquela data é real ou não, fazendo as seguintes validações:
 # •	Verificar se o dia informado existe dentro daquele mês
@@ -212,8 +208,34 @@ call_AnoBissexto = AnoBissexto()
 # •	Verificar se o dia, mês e ano são valores positivos.
 # Informar ao usuário se a data for válida ou não.
 
+class DataReal:
+    def __init__(self):
+        # Solicita ao usuário que informe o dia, mês e ano separadamente
+        dia = int(input("Informe o dia: "))
+        mes = int(input("Informe o mês: "))
+        ano = int(input("Informe o ano: "))
 
+        # Verifica se o ano é bissexto
+        ano_bissexto = ano % 4 == 0 and (ano % 100 != 0 or ano % 400 == 0)
 
+        # Verifica se o mês e o dia estão dentro dos limites
+        if 1 <= mes <= 12 and 1 <= dia <= 31 and mes == 1 or \
+                1 <= mes <= 12 and 1 <= dia <= 31 and mes == 3 or \
+                1 <= mes <= 12 and 1 <= dia <= 31 and mes == 5 or \
+                1 <= mes <= 12 and 1 <= dia <= 31 and mes == 7 or \
+                1 <= mes <= 12 and 1 <= dia <= 31 and mes == 8 or \
+                1 <= mes <= 12 and 1 <= dia <= 31 and mes == 10 or \
+                1 <= mes <= 12 and 1 <= dia <= 31 and mes == 12 or \
+                1 <= mes <= 12 and 1 <= dia <= 30 and mes == 4 or \
+                1 <= mes <= 12 and 1 <= dia <= 30 and mes == 6 or \
+                1 <= mes <= 12 and 1 <= dia <= 30 and mes == 9 or \
+                1 <= mes <= 12 and 1 <= dia <= 30 and mes == 11 or \
+                (ano_bissexto and 1 <= dia <= 29 and mes == 2) or \
+                (not ano_bissexto and 1 <= dia <= 28 and mes == 2):
+            print("Data válida!")
+        else:
+            print("Data inválida!")
+# class_DataReal = DataReal()
 
 # 8)Faça um programa de um caixa eletrônico que, a partir do valor a ser sacado informado pelo usuário, o programa informe a menor quantidade de cédulas que o usuário irá receber, informando-o quantas cédulas e de quais valores ele irá receber.
 # Considerar apenas notas:
@@ -234,6 +256,69 @@ call_AnoBissexto = AnoBissexto()
 # Cédulas de 2 reais: 1
 # Cédulas de 1 real: 1
 
+class Caixa:
+    def __init__(self):
+        # Solicita ao usuário que informe o valor a ser sacado
+
+        valor_sacado = int(input("Informe o valor a ser sacado: R$"))
+
+#       Solicita ao usuário que informe o valor a ser sacado e converte
+#       a entrada para um número inteiro
+
+        valor_sacado = int(input("Informe o valor a ser sacado: R$"))
+
+        # Inicializa as variáveis para contar a quantidade de cada cédula
+        cedula_200 = 0
+        cedula_100 = 0
+        cedula_50 = 0
+        cedula_20 = 0
+        cedula_10 = 0
+        cedula_5 = 0
+        cedula_2 = 0
+        cedula_1 = 0
+
+        # Calcula a quantidade de cada cédula necessária para compor o valor informado,
+        # utilizando a divisão '//' e o operador de módulo'%':
+        cedula_200 = valor_sacado // 200
+        valor_sacado %= 200
+
+        cedula_100 = valor_sacado // 100
+        valor_sacado %= 100
+
+        cedula_50 = valor_sacado // 50
+        valor_sacado %= 50
+
+        cedula_20 = valor_sacado // 20
+        valor_sacado %= 20
+
+        cedula_10 = valor_sacado // 10
+        valor_sacado %= 10
+
+        cedula_5 = valor_sacado // 5
+        valor_sacado %= 5
+
+        cedula_2 = valor_sacado // 2
+        valor_sacado %= 2
+
+        cedula_1 = valor_sacado // 1
+
+        # Exibe a quantidade de cada cédula, se a quantidade for maior que zero:
+        if cedula_200 > 0:
+            print(f"Cédulas de 200 reais: {cedula_200}")
+        if cedula_100 > 0:
+            print(f"Cédulas de 100 reais: {cedula_100}")
+        if cedula_50 > 0:
+            print(f"Cédulas de 50 reais: {cedula_50}")
+        if cedula_20 > 0:
+            print(f"Cédulas de 20 reais: {cedula_20}")
+        if cedula_10 > 0:
+            print(f"Cédulas de 10 reais: {cedula_10}")
+        if cedula_5 > 0:
+            print(f"Cédulas de 5 reais: {cedula_5}")
+        if cedula_2 > 0:
+            print(f"Cédulas de 2 reais: {cedula_2}")
+
+# class_Caixa = Caixa()
 
 
 
