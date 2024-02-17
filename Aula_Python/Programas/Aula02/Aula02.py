@@ -92,6 +92,8 @@ class NotasAluno:
 class OticaDesconto:
     def __init__(self):
 
+        # Se houver uma constante ela devera se maiuscula e snake = MAIUSCULA_CONSTANTE
+
         oculos = float(input('Insira o valor do Óculos: '))
         idade = int(input('Insira sua idade: '))
         idade = float(idade)
@@ -110,7 +112,6 @@ class OticaDesconto:
         else:
             valor = oculos - desconto
             print('O valor do óculos é: $' + str(valor))
-
 # call_OticaDesconto = OticaDesconto()
 
 
@@ -258,29 +259,18 @@ class DataReal:
 
 class Caixa:
     def __init__(self):
-        # Solicita ao usuário que informe o valor a ser sacado
+    # Solicita ao usuário que informe o valor a ser sacado
 
-        valor_sacado = int(input("Informe o valor a ser sacado: R$"))
+       # Solicita ao usuário que informe o valor a ser sacado e converte
+       # a entrada para um número inteiro
 
-#       Solicita ao usuário que informe o valor a ser sacado e converte
-#       a entrada para um número inteiro
-
-        valor_sacado = int(input("Informe o valor a ser sacado: R$"))
-
-        # Inicializa as variáveis para contar a quantidade de cada cédula
-        cedula_200 = 0
-        cedula_100 = 0
-        cedula_50 = 0
-        cedula_20 = 0
-        cedula_10 = 0
-        cedula_5 = 0
-        cedula_2 = 0
-        cedula_1 = 0
+        valor_sacado = float(input("Informe o valor a ser sacado: R$"))
 
         # Calcula a quantidade de cada cédula necessária para compor o valor informado,
         # utilizando a divisão '//' e o operador de módulo'%':
+
         cedula_200 = valor_sacado // 200
-        valor_sacado %= 200
+        valor_sacado = valor_sacado % 200
 
         cedula_100 = valor_sacado // 100
         valor_sacado %= 100
@@ -300,8 +290,6 @@ class Caixa:
         cedula_2 = valor_sacado // 2
         valor_sacado %= 2
 
-        cedula_1 = valor_sacado // 1
-
         # Exibe a quantidade de cada cédula, se a quantidade for maior que zero:
         if cedula_200 > 0:
             print(f"Cédulas de 200 reais: {cedula_200}")
@@ -318,7 +306,8 @@ class Caixa:
         if cedula_2 > 0:
             print(f"Cédulas de 2 reais: {cedula_2}")
 
-# class_Caixa = Caixa()
+
+class_Caixa = Caixa()
 
 
 
