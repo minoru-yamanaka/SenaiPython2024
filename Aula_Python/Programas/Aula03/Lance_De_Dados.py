@@ -2,7 +2,7 @@ import random
 
 class lance:
     def __init__(self):
-        # biblioteca random para gerar números aleatórios
+        # random para gerar números aleatórios
 
         # Define o número de lançamentos
         lancamentos = int(input("Digite o número de lançamentos: "))
