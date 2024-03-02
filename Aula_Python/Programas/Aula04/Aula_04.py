@@ -29,52 +29,60 @@
 # # Nomes, imprimindo-os com seus índices
 # for indice, lista in enumerate(lista, start=1):
 #     print( str(indice) + '-' + str(lista))
-import time
+
 
 # 2) Crie um programa para inserir, apagar e listar os itens de uma lista de compras (utilize append e pop/del).
+import time
+
+lista_original = ['banana','maçã','lichia','pessêgo']
+lista = lista_original.copy()  # Copiando a lista original
+import time
+
+# Inicializando a lista de compras
+lista_original = ['banana', 'maçã', 'lichia', 'pêssego']
+lista = lista_original.copy()  # Copiando a lista original
 
 while True:
-    lista = ['banana','maçã','lichia','pessêgo']
-    print('Esta é a lista de compras: ',lista)
-    print('-'*20)
+    print('-' * 20)
+    print('Esta é a lista de compras: ', lista)
 
-
-    print('''Você quer add mais um item?
-    Escolha uma opção:
-    (S) --> Sim
-    (N) --> Não
-    (R) --> Remover
-    ''')
+    # Solicitando a escolha do usuário
+    print('''Você quer adicionar ou remover um item?
+Escolha uma opção:
+(S) --> Adicionar
+(R) --> Remover
+(N) --> Não
+''')
     escolha = input('Opção: ').upper()
 
-    if escolha not in ('S','N','R'):
-        print('Opção inválida')
-        time.sleep(1)
-        continue
-    elif escolha == 'S':
-        time.sleep(0.5)
-        adicionar = str(input('Insira um item na lista: '))
-        lista.append(adicionar)
+    # Verificando a opção escolhida pelo usuário
+    if escolha == 'S':
+        adicionar = input('Insira um item na lista: ').lower()
+        lista.append(adicionar)  # Adicionando o item à lista
         print(lista)
+
     elif escolha == 'R':
-        time.sleep(0.5)
-        remove = int(input('Remova um item na lista: '))
-        lista.remove(adicionar)
-        print(lista)
+        remover = input('Remova um item da lista: ').lower()
+        if remover in lista:
+            lista.remove(remover)  # Removendo o item da lista
+            print(lista)
+        else:
+            print("Item não encontrado na lista")
+
     elif escolha == 'N':
-        time.sleep(0.5)
-        break
-
-
-
+        break  # Saindo do loop
 
     else:
-        pass
+        print('Opção inválida')
+        time.sleep(1)
+
+print("Lista original:", lista_original)  # Imprimindo a lista original
+print("Lista modificada:", lista)  # Imprimindo a lista modificada
 
 
 
-
-# 3)	Faça um programa que o usuário digite um CPF (exemplo: 123.456.789-10) e o sistema valide se o primeiro digito verificador está correto (no caso do exemplo, o número 1 após o traço).
+# 3)	Faça um programa que o usuário digite um CPF
+# (exemplo: 123.456.789-10) e o sistema valide se o primeiro digito verificador está correto (no caso do exemplo, o número 1 após o traço).
 # Para validar este dígito verificador deve seguir os seguintes passo:
 # 1.	Multiplicar cada número do CPF por um valor respectivo:
 # Ex: CPF 132.465.987-10
@@ -105,13 +113,47 @@ while True:
 # Resultado do cálculo: 4
 # Logo:
 # CPF inválido
-#
+
+cpf = input("Digite o CPF (formato: xxx.xxx.xxx-xx): ")
+
+# Removendo os caracteres não numéricos do CPF usando o método replace
+cpf_numeros = cpf.replace(".", "").replace("-", "")
+
+# Verificando se o CPF tem 11 dígitos
+if len(cpf_numeros) != 11:
+    print("CPF inválido. Deve conter 11 dígitos.")
+else:
+    # Convertendo os dígitos do CPF para inteiros
+    digitos_cpf = [int(digito) for digito in cpf_numeros]
+
+    # Multiplicando cada dígito do CPF pelo seu respectivo peso
+    multiplicador = 10
+    soma = 0
+    for i in range(9):
+        soma += digitos_cpf[i] * multiplicador
+        multiplicador -= 1
+
+    # Calculando o dígito verificador
+    resto = soma % 11
+    if resto < 2:
+        primeiro_digito_verificador = 0
+    else:
+        primeiro_digito_verificador = 11 - resto
+
+    # Validando o primeiro dígito verificador
+    if primeiro_digito_verificador == digitos_cpf[9]:
+        print("O primeiro dígito verificador é válido.")
+    else:
+        print("O primeiro dígito verificador é inválido.")
+
+
 # 4)	Faça um programa que o usuário digite um CPF (exemplo: 123.456.789-10) e o sistema valide se os dois dígitos verificadores estão corretos (no caso do exemplo, o número 4 e número 0 após o traço).
 #
 # Para validar o primeiro dígito, siga o exemplo executado no exercício 3.
 #
 # Para validar o segundo dígito verificador deve seguir os seguintes passo:
-# 1.	Multiplicar cada número por um valor respectivo + o primeiro dígito verificador:
+
+# 1. Multiplicar cada número por um valor respectivo + o primeiro dígito verificador:
 # Ex: CPF 132.465.987-46
 # 1      3      2      4      6      5      9      8      7       4
 # X
