@@ -1,9 +1,11 @@
-titulo = 'Validação de Data'
+
 '''
+titulo = 'Validação de Data'
 Data: 31/07/2023
 Autor: Daniel
 Descrição: Verifica se uma data é valida
 '''
+titulo = 'Validação de Data'
 print('Bem vindo ao programa ' + titulo)
 
 dia = int(input('Digite o dia: '))

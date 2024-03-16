@@ -1,10 +1,11 @@
-titulo = 'Validação 2 Digitos CPF'
 '''
+titulo = 'Validação 2 Digitos CPF'
 Data: 12/05/2023
 Autor: Daniel
 Descrição: Valida os 2 digitos do CPF
 que o usuario digitou
 '''
+titulo = 'Validação 2 Digitos CPF'
 print('Seja bem vindo ao programa ' + titulo)
 
 while True:

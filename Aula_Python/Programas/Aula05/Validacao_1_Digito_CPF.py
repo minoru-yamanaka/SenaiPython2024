@@ -1,10 +1,12 @@
-titulo = 'Validação 1º Digito CPF'
+
 '''
+
 Data: 29/04/2023
 Autor: Daniel
 Descrição: Valida o 1º digito do CPF
 que o usuario digitou
 '''
+titulo = 'Validação 1º Digito CPF'
 print('Seja bem vindo ao programa ' + titulo)
 
 while True:

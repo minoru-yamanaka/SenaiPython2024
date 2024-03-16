@@ -1,9 +1,10 @@
-titulo = 'Ano Bissexto'
 '''
+titulo = 'Ano Bissexto'
 Data: 02/05/2023
 Autor: Daniel
 Descrição: Verifica se um ano é bissexto
 '''
+titulo = 'Ano Bissexto'
 print('Bem vindo ao programa ' + titulo)
 
 print('Por favor, informe um ano')
